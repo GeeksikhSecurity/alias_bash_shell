@@ -18,6 +18,7 @@ alias ll='exa -l --color=always --group-directories-first'  # long format
 alias lt='exa -aT --color=always --group-directories-first' # tree listing
 alias l.='exa -a | egrep "^\."'
 
+# The Cyber Plumber’s Handbook - SSH Tunnels- Brennon Thomas
 alias psg='ps -ef | grep -i $1'
 alias nsg='netstat -natp | grep -i $1'
 
