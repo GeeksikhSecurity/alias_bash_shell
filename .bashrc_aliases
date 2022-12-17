@@ -8,14 +8,18 @@ Sourced from multiple authors
 nano ~/.bashrc
 
 # All you have to do is simply copy and paste the aliases into a section within this file, and then every terminal you open will automatically have the aliases you’ve created available.
+# Alternately copy them to ~/.bash_aliases
 
-# some more ls aliases
+# some aliases
 # Changing "ls" to "exa"
 alias ls='exa -al --color=always --group-directories-first' # my preferred listing
 alias la='exa -a --color=always --group-directories-first'  # all files and dirs
 alias ll='exa -l --color=always --group-directories-first'  # long format
 alias lt='exa -aT --color=always --group-directories-first' # tree listing
 alias l.='exa -a | egrep "^\."'
+
+alias psg='ps -ef | grep -i $1'
+alias nsg='netstat -natp | grep -i $1'
 
 alias cpu5='ps auxf | sort -nr -k 3 | head -5'
 alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
