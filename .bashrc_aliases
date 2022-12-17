@@ -1,0 +1,56 @@
+# alias_bash_shell
+
+Sourced from multiple authors
+# https://www.learnlinux.tv/linux-essentials-bash-aliases/ 
+# https://gitlab.com/dwt1/dotfiles/-/blob/master/.bashrc (Derek Taylor (DistroTube))
+
+# set them up in your .bashrc config file.
+nano ~/.bashrc
+
+# All you have to do is simply copy and paste the aliases into a section within this file, and then every terminal you open will automatically have the aliases you’ve created available.
+
+# some more ls aliases
+# Changing "ls" to "exa"
+alias ls='exa -al --color=always --group-directories-first' # my preferred listing
+alias la='exa -a --color=always --group-directories-first'  # all files and dirs
+alias ll='exa -l --color=always --group-directories-first'  # long format
+alias lt='exa -aT --color=always --group-directories-first' # tree listing
+alias l.='exa -a | egrep "^\."'
+
+alias cpu5='ps auxf | sort -nr -k 3 | head -5'
+alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
+alias upgrade='sudo apt update && sudo apt dist-upgrade'
+alias i='sudo apt install'
+alias lsmount='mount |column -t'
+alias diskfree='df -h -x squashfs -x tmpfs -x devtmpfs'
+alias doas="doas --"
+
+# Colorize grep output (good for log files)
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+# ps
+alias psa="ps auxf"
+alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
+alias psmem='ps auxf | sort -nr -k 4'
+alias pscpu='ps auxf | sort -nr -k 3'
+
+# Merge Xresources
+alias merge='xrdb -merge ~/.Xresources'
+
+# git
+alias addup='git add -u'
+alias addall='git add .'
+alias branch='git branch'
+alias checkout='git checkout'
+alias clone='git clone'
+alias commit='git commit -m'
+alias fetch='git fetch'
+alias pull='git pull origin'
+alias push='git push origin'
+alias stat='git status'  # 'status' is protected name so using 'stat' instead
+alias tag='git tag'
+alias newtag='git tag -a'
+
+# get error messages from journalctl
+alias jctl="journalctl -p 3 -xb"
